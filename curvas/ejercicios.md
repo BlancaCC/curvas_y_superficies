@@ -13,6 +13,8 @@ header-includes:
 - \newcommand{\al}{\alpha (t)}
 - \newcommand{\kl}{k (t)}
 - \newcommand{\ptt}{t \in \R}
+- \newcommand{\ep}{ \epsilon}
+- \usepackage{chngcntr}
 ---
 
 <!--documentclass: report -->
@@ -67,14 +69,14 @@ $$- k(-t) =  -\frac{ 6(-t)}{ (1+ 9(-t)^4 ) ^{\frac{3}{2}}} = \frac{ 6t}{ (1+ 9t^
 
 
 Sea $G(x,y)=(-x,-y)$ para todo $t \in \R ^2$ el giro de $\pi$ radianes respecto del origen 
-(o quivalentemente la simetría respecto a la recta $y=-x$). 
+(o equivalentemente la simetría respecto a la recta $y=-x$). 
 
 Observemos que $G \al = G (t, t^3) = (-t,-t^3) = \alpha( -t)$, es decir, que el giro lo deja invariante 
 como queríamos ver.   
 
 ## d) Simetría de la imagen por paridad de la función curvatura   
 
-Como hipótesis tenemos una curva  $\alpha: (- \epsilon, \epsilon ) \longrightarrow \R ^2$ regular, que aemá su curvatura cumple 
+Como hipótesis tenemos una curva  $\alpha: (- \epsilon, \epsilon ) \longrightarrow \R ^2$ regular, que además su curvatura cumple 
 $\kl = -k(-t).$  
 
 Consideremos el movimiento rígido $M$ de $\R ^2$  que cumple que $M(\alpha(0)) = (0,0)$, que $\overrightarrow{M}_{e_1(0)} = (1,0)$ y 
@@ -88,8 +90,89 @@ Consideremos el movimiento rígido $M$ de $\R ^2$  que cumple que $M(\alpha(0)) 
  S(M \circ \alpha (t)) \text{ para todo }t, 
  \end{equation}
 
-siendo $G$ la aplicación giro definida en el apartado anterior, tendríamos que $Im(\alpha( M \circ \alpha)$ es simétrica respecto al origen.  
+siendo $G$ la aplicación giro definida en el apartado anterior, tendríamos que $Img(\alpha( M \circ \alpha)$ es simétrica respecto al origen.  
 
 
 
 Por tanto $M^{-1} \circ G \circ M \circ \alpha (-t) = \al,$  $M^{-1} \circ G \circ M$ es un giro respecto a una recta $L$   
+
+
+\newpage 
+
+\setcounter{equation}{0}
+# Ejercicio 11     
+
+
+Sea $\alpha : I \longrightarrow \R ^3$ una curva parametrizada por la longitud del arco y tal que $\alpha '' (t) \neq 0$ para todo $t \in I$, 
+y con $k>0$, $\tau >0$. Se considera la curva $\beta (t) = \int_{t_0}^t e_3(s) ds$, donde $e_3(t)$ es el vector binormal a $\alpha$ en $t$.  
+
+
+(a) Comprueba que $\beta$ está parametrizada por la longitud del arco.   
+(b) Construye del triedro de Frenet de $\beta$.  
+(c) Calcula las funciones curvatura y torsión, $k_{\beta}$ y $\tau_{\beta}$.   
+
+## a)  Comprueba que $\beta$ está parametrizada por la longitud del arco.  
+
+Por el teorema fundamental del cálculo se tiene que $\beta' (t) = e_3(t)$, por ser $e_3(t)$  el vector binormal a $\alpha$ en $t$, su módulo será 
+siempre uno para todo $t$, luego acabamos de probar que $\beta$ está parametrizada por la longitud del arco.   
+
+## b) Construcción del triedro de Frenet de $\beta$.   
+
+Para no confundirnos con el triedro de Frenet de $\alpha$ $\{e_1, e_2, e_3 \}$, utilizaré la notación $\{ \ep_1, \ep_2, \ep_3\}$ para referirme al triedro de Frenet de $\beta$.  
+
+
+Por definición y estar parametrizada sabemos que   
+
+\begin{equation}
+\ep_1 (t) = \frac{\beta'(t)}{|\beta'(t)|} = \beta'(t) = e_3(t)
+\end{equation}
+Con lo que acabamos de calcular $\ep_1$. Por otro lado 
+
+\begin{multline*}
+\tilde{\ep_2} (t) = \beta''(t) - <\beta''(t),\ep_1 (t)>\ep_1 (t)
+= e_3'(t) - <e_3'(t),e_3(t)>e_3(t)(t) 
+\end{multline*}
+
+
+Gracias a las ecuaciones de Frenet conocemos que $e_3'(t) = -a_{23} e_2$ ;  sustituyendo en la ecuación anterior y teniendo en cuenta la linealidad
+del producto escalar y la perpendicularidad entre los vectores del triedro de Frenet de $\alpha$:   
+
+\begin{equation*}
+\tilde{\ep_2} (t) = -a_{23} e_2 - < -a_{23} e_2,e_3(t)>e_3(t) = -a_{23} e_2 
+\end{equation*}  
+
+Luego podemos concluir que 
+
+
+\begin{equation}
+\ep_2 = \frac{\tilde{\ep_2} (t)}{|\tilde{\ep_2} (t)|} = \frac{ -a_{23} e_2 }{|-a_{23} e_2|} = -e_2
+\end{equation}  
+
+
+Finalmente 
+
+\begin{equation}
+\ep_3 (t) = \ep_1 \times \ep_2 = e_3 \times -e_2 = e_1
+\end{equation}  
+
+
+Gracias a las igualdades (1), (2) y (3)  podemos afirmar que el triedro de Frenet de $\beta$ es $\{ e_3, -e_2, e_1\}$. 
+
+
+## c) Cálculo de las funciones curvatura y torsión, $k_{\beta}$ y $\tau_{\beta}$.     
+
+
+Por definición  de curvatura,  estar $\beta$ parametrizada por la longitud del y el apartado (b) 
+
+\begin{equation*}
+k_{\beta}(t) = \frac{a^{\beta}_{12}(t)}{|\beta'(t)|} = <\ep^{'}_1(t),\ep_2(t)> = <e'_3(t),-e_2(t)> = -a^{\alpha}_{32}(t) 
+=  a^{\alpha}_{23}(t) = \tau_{\alpha}(t) |\alpha'(t)|.
+\end{equation*}
+
+
+Veamos ahora la torsión 
+
+\begin{equation*}
+\tau _{\beta}(t) = \frac{a^{\beta}_{23}(t)}{|\beta'(t)|} = <\ep^{'}_2(t),\ep_3(t)> = <-e_2'(t) ,e_1'(t)> = -a^{\alpha}_{21}(t) 
+=  a^{\alpha}_{12}(t) = k_{\alpha}(t) |\alpha'(t)|.
+\end{equation*}
