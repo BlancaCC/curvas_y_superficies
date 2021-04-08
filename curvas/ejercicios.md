@@ -146,9 +146,10 @@ O equivalentemente
 
 
 \begin{align*}
-\tilde{e_2} ^{\beta}(t) &= \beta''(t)  - <\beta''(t),e_1 ^{\beta}(t) >e_1 ^{\beta}(t) = \\
-  & = - \gamma''(-t) - < - \gamma'(-t),e_1 ^{\gamma}(-t) >e_1 ^{\gamma}(-t)\\ 
-  &= - (\gamma''(-t) - <\gamma'(-t),e_1 ^{\gamma}(-t) >e_1 ^{\gamma}(-t)) \\
+\tilde{e_2} ^{\beta}(t) &= \beta''(t)  - <\beta''(t),e_1 ^{\beta}(t) >e_1 ^{\beta}(t) \\
+  & = - \gamma''(-t) - < - \gamma''(-t),e_1 ^{\gamma}(-t) >e_1 ^{\gamma}(-t)\\ 
+  & = - \gamma''(-t) + < \gamma''(-t),e_1 ^{\gamma}(-t) >e_1 ^{\gamma}(-t)\\ 
+  &= - (\gamma''(-t) - <\gamma''(-t),e_1 ^{\gamma}(-t) >e_1 ^{\gamma}(-t)) \\
   & = - \tilde{e_2}^{\gamma} (-t)
 \end{align*}
 
