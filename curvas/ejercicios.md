@@ -85,17 +85,21 @@ Consideremos el movimiento rígido $M$ de $\R ^2$  que cumple que $M(\alpha(0)) 
  que $\overrightarrow{M}_{e_2(0)} = (0,1)$.  
  
  Luego la curva $M \circ \alpha :(- \epsilon, \epsilon ) \longrightarrow \R ^2$ es regular y congruente con $\alpha$, cumple además que
- que $e ^{M \circ \alpha}_1(0) = (1,0)$ y $e ^{M \circ \alpha}_2(0) = (0,1)$
+ que $e ^{M \circ \alpha}_1(0) = (1,0)$ y $e ^{M \circ \alpha}_2(0) = (0,1)$.  
+ <!--
  Si probamos que 
+ 
  
  \begin{equation*}
  G(M \circ \alpha (-t)) =  M \circ \alpha (t) \text{ para todo }t, 
  \end{equation*}
 
-siendo $G(x,y) = (-x,-y)$ la aplicación giro definida en el apartado anterior, tendríamos que $Img(M \circ \alpha)$ es invariante a un giro de $\pi$ radianes con centro 0. 
+siendo
+-->
+Queremos por tanto probar que para $G(x,y) = (-x,-y)$ la aplicación giro definida en el apartado anterior, la  $Img(M \circ \alpha)$ es invariante a un giro de $\pi$ radianes con centro 0. 
 
-
-
+Es decir, solo tenemos que ver que 
+<!--
 
 Por tanto $M^{-1} \circ G \circ M \circ \alpha (-t) = \al$ y   $M^{-1} \circ G \circ M$ es un giro de $\pi$ radianes con centro en $p$.
 
@@ -106,12 +110,11 @@ $M^{-1}  G  M(p) = p$  o equivalentemente $G M(p) = M (p)$, el único punto figo
 $M^{-1} \circ G \circ M$ es un movimineto rígido directo con un único punto fijo, luego es un giro. 
 
 FALTA UNA CONSIDERACIÓN   
-
-Sólo tenemos que ver que 
+--> 
 
 $$G(M \circ \alpha)(-t) = (M \circ \alpha)(t), \text{ para todo } t \in (- \epsilon, \epsilon )$$
 
-Para ello definimos $\gamma = M \circ \alpha$ y $\beta(t) = G \circ \gamma(-t).$  
+Con el fin de simplificar la notación llamaremos a los términos de la ecuación anterior:  $\gamma = M \circ \alpha$ y $\beta(t) = G \circ \gamma(-t).$   
 
 Se cumple que 
 \begin{equation} 
@@ -131,15 +134,16 @@ Luego en el caso particular del origen:
 \beta '(0) = - G \gamma'(0) = - G (1,0) = - (-1,0) = (1,0) = \gamma'(0)
 \end{equation*}
 
-Esto quiere decir que $J \beta'(0) = J \alpha '(0)$ ya que tienen el mismo vector velocidad y $\alpha$ es congruente a $\gamma = M \alpha$.   
+Por lo que $J \beta'(0) = J \gamma '(0)$.   
 
-O equivalentemente
+Equivalentemente
 
 \begin{align*}
  & e_1 ^{\gamma}(0) = \frac{\gamma'(0)}{|\gamma'(0)|} = \frac{\beta'(0)}{|\beta'(0)|} =  e_1 ^{\beta}(0) \\
 & e_2 ^{\gamma}(0)  = Je_1 ^{\gamma}(0) = Je_2 ^{\beta}(0)  = e_2 ^{\beta}(0)
 \end{align*}
  
+ <!--
  Además de manera más general tenemos que: 
  
  De manera más general en virtud de (2):   
@@ -162,8 +166,8 @@ e_2 ^{\beta}(t) = \frac{\tilde{e_2} ^{\beta} (t)}{|\tilde{e_2} ^{\beta}(t)|} =
 \frac{- \tilde{e_2}^{\gamma} (-t)}{|- \tilde{e_2}^{\gamma} (-t)|} = - e_2^{\gamma} (-t)
 \end{equation}
 
-
-Veamos ahora que $k_{\gamma} (t) = k_{\beta}(t)$ para todo $t$.   
+-->
+Comprobemos ahora que la curvatura de $\gamma$ también cumple la hipótesis del enunciado.  
 
 Como $\gamma = M \circ \alpha$, con $M$ movimiento rigído cualquiera distinguiremos si éste es positivo o negativo: 
 
@@ -182,6 +186,7 @@ De donde deducimos que independientemente del movimiento rígido aplicado
 - k_{\gamma} (- t) = k_{\gamma} (t) \text { para todo } t \in (- \epsilon, \epsilon ).
 \end{equation}    
  
+Veamos ahora que $k_{\gamma} (t) = k_{\beta}(t)$ para todo $t \in  (- \epsilon, \epsilon ).$   
 
 Observemos ahora además que $\beta$ es una reparemetrización de $\gamma$ compuesta con un movimiento rígido directo $G$.   Donde $\phi(t) = -t$ es el difeomorfismo de $\mathbb R \longrightarrow \mathbb R$ tal que $\beta = G \circ \gamma \circ\phi$. 
 
@@ -190,7 +195,7 @@ se tiene que
 
 $$k_{\beta}(t) = k_{G \circ \gamma \circ\phi}(t) = k_{\gamma \circ\phi} (t) = - k_{\gamma \circ\phi} (- t)$$  
 
-Y en virtud de la igualdad ( -2) 
+Y en virtud de la igualdad (3) 
 
 $$k_{\beta}(t) =  k_{\gamma}(t)$$
 
@@ -205,18 +210,18 @@ k_{\beta}(t) = \frac{a_{12}^{\beta}(t)}{|\beta '(t)|} =
 \end{equation*}
 
 
-Y utilizando de nuevo (_) se tendría que  $k_{\beta}(t) = - k_\gamma(-t) = k_\gamma(t).$   
+Y utilizando de nuevo (3) se tendría que  $k_{\beta}(t) = - k_\gamma(-t) = k_\gamma(t).$   
 
 
 El teorema de unicidad global afirma que existe un único movimiento rígido directo $F$ tal que $\beta = F \circ \gamma$.  
 
-Además por (1) sabemos que $F (\gamma(0)) = \beta$ y 
+Además por (1) sabemos que $F (\gamma(0)) = \beta(0)$ y 
 que $\overrightarrow{F}(e_i^{\beta}(0)) = e_i^{\gamma}(0)$ para $i \in \{1,2\}$. Así que tenemos que $F$ deja fijo un punto y además 
 $\overrightarrow{F} = \overrightarrow{Id}$. 
 
-Por lo que por geometría a fin necesariamente $F = Id_{\mathbb R^2 \times \mathbb R^2}$ y que 
+Por lo que por geometría a fin necesariamente $F = Id$ y que $\gamma = \beta$, es decir hemos probado que es invariante mediante un giro de $\pi$ radianes respecto $\alpha(0):$
 
-$$\gamma = \beta = G (\gamma (-t)) \quad \forall t \in (- \epsilon, \epsilon)$$
+$$G(M \circ \alpha (-t)) =  M \circ \alpha (t) \quad \forall t \in (- \epsilon, \epsilon)$$
  
 
 <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
@@ -252,6 +257,7 @@ siempre uno para todo $t$, luego acabamos de probar que $\beta$ está parametriz
 
 ## b) Construcción del triedro de Frenet de $\beta$.   
 
+Como observación previa tiene sentido calcularlo por las hipótesis del ejercicio.  
 Para no confundirnos con el triedro de Frenet de $\alpha$ $\{e_1, e_2, e_3 \}$, utilizaré la notación $\{ \ep_1, \ep_2, \ep_3\}$ para referirme al triedro de Frenet de $\beta$.  
 
 
@@ -262,10 +268,10 @@ Por definición y estar parametrizada sabemos que
 \end{equation}
 Con lo que acabamos de calcular $\ep_1$. Por otro lado 
 
-\begin{multline*}
+\begin{equation*}
 \tilde{\ep_2} (t) = \beta''(t) - <\beta''(t),\ep_1 (t)>\ep_1 (t)
 = e_3'(t) - <e_3'(t),e_3(t)>e_3(t)
-\end{multline*}
+\end{equation*}
 
 
 Gracias a las ecuaciones de Frenet conocemos que $e_3'(t) = -a_{23} e_2$ ;  sustituyendo en la ecuación anterior y teniendo en cuenta la linealidad
@@ -295,6 +301,7 @@ Gracias a las igualdades (1), (2) y (3)  podemos afirmar que el triedro de Frene
 
 ## c) Cálculo de las funciones curvatura y torsión, $k_{\beta}$ y $\tau_{\beta}$.     
 
+ 
 
 Por definición  de curvatura,  estar $\alpha$ y $\beta$ parametrizadas por la longitud del y el apartado (b) 
 
@@ -310,3 +317,8 @@ Veamos ahora la torsión
 \tau _{\beta}(t) = \frac{a^{\beta}_{23}(t)}{|\beta'(t)|} = <\ep^{'}_2(t),\ep_3(t)> = <-e_2'(t) ,e_1'(t)> = -a^{\alpha}_{21}(t) 
 =  a^{\alpha}_{12}(t) = k_{\alpha}(t) |\alpha'(t)| =k_{\alpha}(t).
 \end{equation*}
+
+Acabamos de calcular que 
+
+$$k_{\beta}(t) = \tau_{\alpha}(t)$$
+$$\tau _{\beta}(t)=k_{\alpha}(t).$$
