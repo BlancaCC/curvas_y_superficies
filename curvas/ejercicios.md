@@ -33,31 +33,31 @@ Sea la curva $\alpha : \R \longrightarrow \R ^2$ dada por $\al = (t, t^3)$, para
 ángulo $\pi$ deja a $Img(\alpha)$ invariante).   
 
 (d) Motivado por lo anterior, si $\alpha: (- \epsilon, \epsilon ) \longrightarrow \R ^2$ con  $\epsilon > 0$ o $\epsilon > \infty$,
-es una curva regula cuya curvatura cumple que $\kl = -k(-t)$ para todo $t \in (- \epsilon, \epsilon )$, ¿podemos afirmar que 
+es una curva regular cuya curvatura cumple que $\kl = -k(-t)$ para todo $t \in (- \epsilon, \epsilon )$, ¿podemos afirmar que 
 $Img(\alpha)$ es simétrica respecto del punto $\alpha(0)$.   
 
 
 ## a) Regularidad 
 
 
-Se tiene que $\al ' = (1, 3t^2)$ que no se anula sea cual sea $t \in \R$ gracias a su primera componente, luego es regular. O de otra manera, $|\al'| = 0$ si y solo si $\al' = 0$, pero que  $|\al'| = 0$ equivale a que  $|\al'|^2 = 0$ y sabemos que $|\al'|^2 = 1 + 3t^4 \geq 1 > 0$ para todo $t$, luego nunca se $\al$ es regular.  
+Se tiene que $\al ' = (1, 3t^2)$ que no se anula sea cual sea $t \in \R$ gracias a su primera componente, luego es regular. O de otra manera, por ser una norma $|\al'| = 0$ si y solo si $\al' = 0$; si  $|\al'| = 0$ equivale a que  $|\al'|^2 = 0$ y sabemos que $|\al'|^2 = 1 + 3t^4 \geq 1 > 0$ para todo $t$, de donde deducimos que no se anula, es decir  $\al$ es regular.  
 
 
 ## b) Cálculo de su curvatura y ver que es impar.  
 
-Para este aparatado veremos que $\al$ es la parametrización natural de la gráfica de la función cúbica $f(x) = x^3$. 
+Para este apartado veremos que $\al$ es la parametrización natural de la gráfica de la función cúbica $f(x) = x^3$. 
 
 Esto es $\al = (t, f(t))$
 
 \includegraphics[width=\linewidth]{./media/cubica.png}
 
 
-Además para este tipo de curvas conocemos la siguiente expresión para calcular su curvatura
+Además para este tipo de curvas su curvatura puede calcularse de la expresión: 
 
-$$ \kl = \frac{f''(t)}{ (1+ f'(t)^2 ) ^{\frac{3}{2}}}$$
-luego como $f'(t) = 3 t^2$ y   $f''(t) = 6 t$, podemos concluir que 
+$$\kl = \frac{f''(t)}{ (1+ f'(t)^2 ) ^{\frac{3}{2}}}$$
+calculando $f'(t) = 3 t^2$ y   $f''(t) = 6 t$, podemos concluir que 
 
-$$ \kl = \frac{ 6t}{ (1+ 9t^4 ) ^{\frac{3}{2}}}$$  
+$$\kl = \frac{ 6t}{ (1+ 9t^4 ) ^{\frac{3}{2}}}$$  
 
 como se quería probar. 
 
@@ -88,9 +88,9 @@ Consideremos el movimiento rígido $M$ de $\R ^2$  que cumple que $M(\alpha(0)) 
  que $e ^{M \circ \alpha}_1(0) = (1,0)$ y $e ^{M \circ \alpha}_2(0) = (0,1)$
  Si probamos que 
  
- \begin{equation}
+ \begin{equation*}
  G(M \circ \alpha (-t)) =  M \circ \alpha (t) \text{ para todo }t, 
- \end{equation}
+ \end{equation*}
 
 siendo $G(x,y) = (-x,-y)$ la aplicación giro definida en el apartado anterior, tendríamos que $Img(M \circ \alpha)$ es invariante a un giro de $\pi$ radianes con centro 0. 
 
@@ -113,7 +113,11 @@ $$G(M \circ \alpha)(-t) = (M \circ \alpha)(t), \text{ para todo } t \in (- \epsi
 
 Para ello definimos $\gamma = M \circ \alpha$ y $\beta(t) = G \circ \gamma(-t).$  
 
-Se cumple que $\gamma (0) = \beta(0)$ ya que $G \gamma(0) =  \gamma(0)$ al ser el centro de giro. 
+Se cumple que 
+\begin{equation} 
+\gamma (0) = \beta(0)
+\end{equation}
+ya que $G \gamma(0) =  \gamma(0)$ al ser el centro de giro. 
 
 Además, por la regla de la cadena: 
 
@@ -133,7 +137,7 @@ O equivalentemente
 
 \begin{align*}
  & e_1 ^{\gamma}(0) = \frac{\gamma'(0)}{|\gamma'(0)|} = \frac{\beta'(0)}{|\beta'(0)|} =  e_1 ^{\beta}(0) \\
-& e_2 ^{\gamma}(0)  = e_2 ^{\beta}(0)
+& e_2 ^{\gamma}(0)  = Je_1 ^{\gamma}(0) = Je_2 ^{\beta}(0)  = e_2 ^{\beta}(0)
 \end{align*}
  
  Además de manera más general tenemos que: 
@@ -159,19 +163,61 @@ e_2 ^{\beta}(t) = \frac{\tilde{e_2} ^{\beta} (t)}{|\tilde{e_2} ^{\beta}(t)|} =
 \end{equation}
 
 
-Veamos ahora que $k_{\gamma} (t) = k_{\beta}(t)$ para todo $t$. 
+Veamos ahora que $k_{\gamma} (t) = k_{\beta}(t)$ para todo $t$.   
 
-Por la definición de curvatura y (3)(4):  
+Como $\gamma = M \circ \alpha$, con $M$ movimiento rigído cualquiera distinguiremos si éste es positivo o negativo: 
+
+- Si es directo entonces $k_{\gamma} (t) = k_{\alpha}(t)$ y bastará con aplicar la hipótesis del problema en la segunda igualdad para ver que  
+
+$$- k_{\gamma} (- t) = - k_{\alpha} (- t) = k_{\alpha} (t) =  k_{\gamma} (t), \quad \forall t \in (- \epsilon, \epsilon )$$
+
+- Si $M$ es un movimiento rígido inverso, entonces $k_{\gamma} (t) = -k_{\alpha}(t)$ y de igual forma se tiene que 
+
+$$- k_{\gamma} (- t) = - (- k_{\alpha} (- t))  = - k_{\alpha} (t) =  k_{\gamma} (t), \quad \forall t \in (- \epsilon, \epsilon )$$
+
+
+De donde deducimos que independientemente del movimiento rígido aplicado
+
+\begin{equation} 
+- k_{\gamma} (- t) = k_{\gamma} (t) \text { para todo } t \in (- \epsilon, \epsilon ).
+\end{equation}    
+ 
+
+Observemos ahora además que $\beta$ es una reparemetrización de $\gamma$ compuesta con un movimiento rígido directo $G$.   Donde $\phi(t) = -t$ es el difeomorfismo de $\mathbb R \longrightarrow \mathbb R$ tal que $\beta = G \circ \gamma \circ\phi$. 
+
+La curvatura se mantiene por movimientos rígidos directos, mientras que para reparametrizaciones  con derivada negativa ($\phi ' (t) = -1 < 0$) es opuesta, 
+se tiene que 
+
+$$k_{\beta}(t) = k_{G \circ \gamma \circ\phi}(t) = k_{\gamma \circ\phi} (t) = - k_{\gamma \circ\phi} (- t)$$  
+
+Y en virtud de la igualdad ( -2) 
+
+$$k_{\beta}(t) =  k_{\gamma}(t)$$
+
+
+Alternativamente se podía haber usado la definición de curvatura y (2):  
 
 \begin{equation*}
 k_{\beta}(t) = \frac{a_{12}^{\beta}(t)}{|\beta '(t)|} =
-\frac{<(e_1 ^{ \beta})'(t), e_2 ^{\beta}(t)>}{|\beta '(-t)|} = 
-\frac{<-(e_1 ^{ \gamma })'(-t), - e_2 ^{\gamma}(-t)>}{|\gamma '(-t)|}
-= k_\gamma(-t)
+\frac{<\beta ''(t), J \beta'(t)>}{|\beta '(-t)| ^3} = 
+\frac{<- \gamma ''(-t), J \gamma'(-t)>}{|\gamma '(-t)| ^3}
+= - k_\gamma(-t)
 \end{equation*}
 
 
-REVISAR, DEBERÍA DE QUEDAR $k_{\beta}(t) = - k_\gamma(-t)$ para que se pueda aplicar que la curvatura se mantiene por movimientos rígidos luego $k_\gamma(t) = k_\alpha(t)$ y la hipótesis de que  $k_\alpha(t)= - k_\alpha(-t)$
+Y utilizando de nuevo (_) se tendría que  $k_{\beta}(t) = - k_\gamma(-t) = k_\gamma(t).$   
+
+
+El teorema de unicidad global afirma que existe un único movimiento rígido directo $F$ tal que $\beta = F \circ \gamma$.  
+
+Además por (1) sabemos que $F (\gamma(0)) = \beta$ y 
+que $\overrightarrow{F}(e_i^{\beta}(0)) = e_i^{\gamma}(0)$ para $i \in \{1,2\}$. Así que tenemos que $F$ deja fijo un punto y además 
+$\overrightarrow{F} = \overrightarrow{Id}$. 
+
+Por lo que por geometría a fin necesariamente $F = Id_{\mathbb R^2 \times \mathbb R^2}$ y que 
+
+$$\gamma = \beta = G (\gamma (-t)) \quad \forall t \in (- \epsilon, \epsilon)$$
+ 
 
 <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
 
@@ -218,7 +264,7 @@ Con lo que acabamos de calcular $\ep_1$. Por otro lado
 
 \begin{multline*}
 \tilde{\ep_2} (t) = \beta''(t) - <\beta''(t),\ep_1 (t)>\ep_1 (t)
-= e_3'(t) - <e_3'(t),e_3(t)>e_3(t)(t) 
+= e_3'(t) - <e_3'(t),e_3(t)>e_3(t)
 \end{multline*}
 
 
